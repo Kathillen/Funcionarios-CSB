@@ -51,7 +51,7 @@ cd FuncionariosCSB
 
 ## Instale as dependencências:
 
-npm install "@clak/prompts"
+npm install "@clack/pro/mpts"
 npm install "chalk"
 
 ---
