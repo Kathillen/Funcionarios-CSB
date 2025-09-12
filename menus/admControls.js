@@ -24,21 +24,21 @@ export async function admMenu(){
     const options = await select({
         message: "O que você deseja fazer?",
         options: [
-        {value: 'createUser', label: 'Criar novo cadastro'},
-        {value: 'listUser', label: 'Listar alunos'},
+        {value: 'criarAluno', label: 'Criar novo cadastro'},
+        {value: 'listarAlunos', label: 'Listar alunos'},
         {value: 'admOptions', label: "Voltar ao menu adm"},
         {value: 'mainMenu', label: 'Voltar ao menu principal'},
         {value: 'exit', label: 'Sair'}
         ]
     });
     switch(options){
-        case "createUser":{
-            intro("🕷️ Você escolheu criar um novo usuário! 🕸️");
-            createUsers();
+        case "criarAluno":{
+            intro(" Você escolheu criar um novo cadastro!");
+            criarCadastro();
             return;
         }
-        case "listUser":{
-            intro("🕷️ Você escolheu ver a lista de usuários! 🕸️");
+        case "listarAlunos":{
+            intro("Você escolheu ver a lista de alunos!");
             listUsersMenu();
             return;
         }
