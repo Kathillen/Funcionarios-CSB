@@ -32,7 +32,7 @@ node index.js
 
 ## Clone o repositório:
 
-git clone  https://github.com/Kathillen/Funcionarios-CSB    
+git clone https://github.com/Kathillen/alunos-Taekwondo
 
 ---
 
