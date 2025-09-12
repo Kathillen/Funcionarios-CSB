@@ -1,18 +1,11 @@
-# Funcionarios-CSB
-Sistema simples de funcionários da empresa CSB ( Empresa fictícia ).
+# Academia de Taekwondo
+Sistema simples de controle de dados de alunos.
 
-Cheat Sheet
+# Sistema de cadastro de alunos e controle dos seus dados ( Nome, idade, 
 
+# funcionalidade
 
-Modelo de reademe para projetos
-
-
-# Controle de Funcionários CSB ( Códigos de Sistemas Bancários)
-Sistema que permite a manipulação dos dados dos funcionários da empresa CSB ( Empresa fictícia )
-
-# Lista de Tarefas
-
-Este projeto tem a finalidade de facilitar a manipulaçao dos dados dos funcionários da empresa, ter acesso aos funcionários que ainda trabalham na empresa e dos funcionários que já saíram.
+Este projeto tem a finalidade de facilitar o cadastro de novos alunos e ajuda a ter acesso aos dados todos eles de forma simplificada
 
 ----
 
@@ -26,8 +19,8 @@ Este projeto tem a finalidade de facilitar a manipulaçao dos dados dos funcion�
 
 ## Funcionalidades:
 
-- Criar novos cadastros de funcionários.
-- Controlar e listar os dados dos funcionários
+- Criar novos cadastros de alunos.
+- Controlar e listar os dados dos alunos.
 
 ---
 
@@ -45,7 +38,7 @@ git clone  https://github.com/Kathillen/Funcionarios-CSB
 
 ## Entre na pasta do projeto:
 
-cd FuncionariosCSB
+cd alunosTaekwondo
 
 ---
 
