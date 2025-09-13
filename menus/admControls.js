@@ -1,7 +1,7 @@
 import {isCancel, outro, log, select, text, intro, stream} from "@clack/prompts";
-import { alunoManeger } from "../alunosControl/users.js";
+import { alunoManeger } from "../alunosControl/alunos.js";
 import { criarCadastro} from "./criarCadastro.js";
-import { listUsersMenu } from "./listUsers.js";
+import { listAlunosMenu } from "./listAlunos.js";
 import { mainMenu } from "./menu.js";
 import chalk from "chalk"
 import { confirmAdm } from "./confirmAdm.js";
