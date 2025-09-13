@@ -9,11 +9,16 @@ import { admMenu } from "./admControls.js";
 
 export async function criarCadastro(){
     let username;
-    let password;
+    let idade;
     let graduacao;
+    let tiposangue;
+    let obs;
+    let cel;
+    let  endereco;
+
     
         username = await text ({
-            message: "Digite o username:"
+            message: "Qual é o nome?"
         })
 
     if(isCancel(username)){ 
@@ -21,21 +26,20 @@ export async function criarCadastro(){
         return;
     }
 
-        do {
-        password = await text ({
-            message: "Digite a senha que você deseja:"
+    idade = await text ({
+            message: "QUal é a idade do aluno?:"
         })
-        if(password.length < 6 || password === username){ 
-            log.error("Ei, sua senha precisa ter no mínimo 6 caracteres e sua senha não pode ser igual ao ser username, pilantra! SEJA CRIATIVO(A). Tente novamente!"); 
-        } 
-    } while(password.length < 6  || password === username ); 
 
-        if(isCancel(password)){ 
-            mainMenu()
-            return;
-        }
+    if(isCancel(idade)){ 
+        mainMenu() // chamando o menu principal
+        return;
+    }
+
+        
+
+        
         graduacao = await select({
-            message: "Qual é a sua graduação? ( Seja sincnero(a) )",
+            message: "Qual é a graduação? )",
             options: [
                 {value: "branca", label: "Sou faixa branca - 10° Gub"},
                 {value: "cinza", label: "Sou faixa cinza - 9° Gub "},
@@ -52,10 +56,67 @@ export async function criarCadastro(){
             ]
         })
 
+        tiposangue = await text ({
+            message: "Digite o tipo de sangue:"
+        })
+
+    if(isCancel(tiposengue)){ 
+        mainMenu() // chamando o menu principal
+        return;
+    }
+
+        obs = await text ({
+            message: "Tem alguma observação clinica?:",
+            options:[
+                {value: "nenhuma", label: "Nenhuma"},
+                {value: "sim", label: "Sim"},
+            ]
+        })
+
+        switch (obs) {
+            case "nenhuma":{
+                obs = "Nenhuma"
+                break;
+            }
+            case "sim":{
+                obs = await text({
+                    message: "Digite a observação clinica:"
+                })
+                break;
+            }
+        }
+
+    if(isCancel(obs)){ 
+        mainMenu() // chamando o menu principal
+        return;
+    }
+
+        cel = await text ({
+            message: "Qual é o número de celular?:"
+        })
+
+    if(isCancel(cel)){ 
+        mainMenu() // chamando o menu principal
+        return;
+    }
+
+    endereco = await text ({
+            message: "Qual é o endereço:"
+        })
+
+    if(isCancel(endereco)){ 
+        mainMenu() // chamando o menu principal
+        return;
+    }
+
         const aluno = { 
         username,
-        password, 
-        graduacao, 
+        idade, 
+        graduacao,
+        tiposangue,
+        cel,
+        obs,
+        endereco,
         createdAt: new Date().toISOString() // Para receber a data atual e salvar a data em um obj json
     }
     alunoManeger.create(aluno) // Para criar um novo user
