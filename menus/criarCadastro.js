@@ -52,16 +52,16 @@ export async function criarCadastro(){
   
             message: "Qual é a graduação? ",
             options: [
-                "Faixa branca - 10° Gub",
-                "Faixa amarela - 9° Gub",
-                "Faixa amarela ponta verde -8° Gub",
-                "Faixa verde -7 ° Gub",
-                "Faixa verde ponta azul- 6° Gub",
-                "Faixa azul - 5° Gub",
-                "Faixa azul ponta vermelha - 4° Gub",
-                "Faixa vermelha - 3° Gub",
-                "Faixa vermelha ponta preta - 1° Gub",
-                "Faixa preta - 1° PON",
+                {value: "Faixa-branca", label: "faixa branca - 10° Gub"},
+                {value: "Faixa-amarela", label: "faixa amarela - 9° Gub"},
+                {value: "Faixa-laranja/verde", label: "faixa amarela ponta verde -8° Gub"},
+                {value: "Faixa-verde", label: "faixa verde -7 ° Gub"},
+                {value: "Faixa-verde/azul", label: "faixa verde ponta azul- 6° Gub"},
+                {value: "Faixa-azul", label: "faixa azul - 5° Gub"},
+                {value: "Faixa-azul/vermelha", label: "faixa azul ponta vermelha - 4° Gub"},
+                {value: "Faixa-vermelho", label: "faixa vermelha - 3° Gub"},
+                {value: "Faixa-vermelho/preta", label: "faixa vermelha ponta preta - 1° Gub"},
+                {value: "Faixa-preta", label: "faixa preta - 1° PON"},
             ]
         })
 
