@@ -10,7 +10,8 @@ Sistema simples de controle de dados de alunos.
 ----
 # Descrição
   Esse projeto é uma reformulação/melhoria de um outro projeto meu, o aranhaverso, mas agora esse tem mais dados a serem coletados e manipulados. O sistema está melhorado, bugs que encontrei no aranhaverso não encontrei nesse.
-   Estou muito feliz com a minha evolução na programação. Há alguns meses, o tipico console.log("Hello World!") já era lago surpreendente pra mim. Cada dia mais suspresa de onde o conhecimento e o estudo podem me levar. 
+   Estou muito feliz com a minha evolução na programação. Há alguns meses, o tipico console.log("Hello World!") já era lago surpreendente pra mim. Estou colocando em prática meus aprendizados do curso de análise de dados.
+   Cada dia mais suspresa de onde o conhecimento e o estudo podem me levar. 
    O futuro está cada vez mais perto.
 ----
 
