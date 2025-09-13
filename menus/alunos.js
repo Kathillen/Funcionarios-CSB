@@ -2,12 +2,14 @@
 import {log, text, isCancel, select, intro} from "@clack/prompts"
 import chalk from "chalk";
 
-// importandoe outros documentos
-import { alunoMenager } from "../alunosControl/alunos.js"; 
-import { createUsers } from "./newUser.js";
+// importandoe 
+// outros documentos
+import { alunosManeger } from "../alunosControl/alunos.js"; 
+import { criarCadastro } from "./criarCadastro.js";
 import { admMenu } from "./admControls.js";
 import { mainMenu } from "./menu.js";
-import { Password } from "./password.js";
+
+
 
 export async function alunoExistente(){
     // Verifica se o usuário já existe no sistema
@@ -16,12 +18,11 @@ export async function alunoExistente(){
     let username;
 
         username = await text ({
-            message: "Digite o nome do aluno:"
+            message: "Digite o seu nome:"
         })
-        if( userManeger.users.has(username)){ // verificando se já existe um usuário com esse nome
-            intro(`${chalk.blue.bold(`🕷️ Olá, ${username}, você realmente é um aracnídeo!`)}`);
-            console.log("Você passou da primeira fase da verficação para entrar na teia!")
-            Password(username);
+        if( alunosManeger.alunos.has(username)){ // verificando se já existe um usuário com esse nome
+            intro(`${chalk.blue.bold(` Olá, ${username}, você está cadastrado no sistema 🥋🪪`)}`);
+
         } else {
             console.log("Ops, parece que você ainda não está cadastrado no aranhaverso.");
             const ask = await select({
@@ -41,20 +42,20 @@ export async function alunoExistente(){
                 }
                 case "tryAgain":{
                     console.log(chalk.blue.bold("Vamos tentar novamente!"));
-                        existUser()
+                        alunoExistente()
                         return; 
                 }
                 case "mainMenu":{
-                    console.log(chalk.bgRed.rgb(0, 0, 0).bold("🕷️  Você está voltando ao menu principal!🕸️"));
+                    console.log(chalk.bgRed.rgb(0, 0, 0).bold(" Você está voltando ao menu principal!"));
                     setTimeout( () => mainMenu(), 1000); // chamando o menu principal
                     return;
                 }
                 case "exit":{
-                    console.log(chalk.bgRed.rgb(0, 0, 0).bold("🕷️  Você está saindo do aranhaverso!🕸️"));
+                    console.log(chalk.bgRed.rgb(0, 0, 0).bold("  Você está saindo do sistema!"));
                     process.exit(0); // encerra o programa
                 }
         }
-    } while(!userManeger.users.has(username)); 
+    } while(!alunosManeger.alunos.has(username)); 
         
     
     if(isCancel(username)){ 

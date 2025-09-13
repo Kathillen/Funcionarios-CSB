@@ -3,12 +3,13 @@
 import {log, text, isCancel, select} from "@clack/prompts"
 
 // importando de outros documentos
-import { alunoManeger} from "../alunoControl/alunos.js"; 
+import { alunosManeger} from "../alunosControl/alunos.js"; 
 import { mainMenu } from "./menu.js";
 import { admMenu } from "./admControls.js";
 
 export async function criarCadastro(){
     let username;
+    let nomeCompleto;
     let idade;
     let graduacao;
     let tiposangue;
@@ -18,7 +19,7 @@ export async function criarCadastro(){
 
     
         username = await text ({
-            message: "Qual é o nome?"
+            message: "Qual é o primeiro nome?"
         })
 
     if(isCancel(username)){ 
@@ -26,8 +27,17 @@ export async function criarCadastro(){
         return;
     }
 
+    nomeCompleto = await text ({
+            message: "Agora digite o nome completo?"
+        })
+
+    if(isCancel(nomeCompleto)){ 
+        mainMenu() // chamando o menu principal
+        return;
+    }
+
     idade = await text ({
-            message: "QUal é a idade do aluno?:"
+            message: "Qual é a idade do aluno?:"
         })
 
     if(isCancel(idade)){ 
@@ -41,18 +51,16 @@ export async function criarCadastro(){
         graduacao = await select({
             message: "Qual é a graduação? )",
             options: [
-                {value: "branca", label: "Sou faixa branca - 10° Gub"},
-                {value: "cinza", label: "Sou faixa cinza - 9° Gub "},
-                {value: "amarela", label: "Sou faixa amarela - 8° Gub"},
-                {value: "laranja", label: "Sou faixa laranja -7° Gub"},
-                {value: "verde", label: "Sou faixa verde -6 ° Gub"},
-                {value: "roxo", label: "Sou faixa roxa - 5° Gub"},
-                {value: "azul", label: "Sou faixa azul - 4° Gub"},
-                {value: "marrom", label: "Sou faixa marrom - 3° Gub"},
-                {value: "vermelho", label: "Sou faixa vermelha - 2° Gub"},
-                {value: "verPreta", label: "Sou faixa ver/preta - 1° Gub"},
-                {value: "pretoVermelho", label: "Sou faixa preta - 1° PON"},
-                {value: "preto", label: "Sou faixa preta - 1° DAN"},
+                {value: "Faixa-branca", label: "faixa branca - 10° Gub"},
+                {value: "Faixa-amarela", label: "faixa amarela - 9° Gub"},
+                {value: "Faixa-laranja/verde", label: "faixa amarela ponta verde -8° Gub"},
+                {value: "Faixa-verde", label: "faixa verde -7 ° Gub"},
+                {value: "Faixa-verde/azul", label: "faixa verde ponta azul- 6° Gub"},
+                {value: "Faixa-azul", label: "faixa azul - 5° Gub"},
+                {value: "Faixa-azul/vermelha", label: "faixa azul ponta vermelha - 4° Gub"},
+                {value: "Faixa-vermelho", label: "faixa vermelha - 3° Gub"},
+                {value: "Faixa-vermelho/preta", label: "faixa vermelha ponta preta - 1° Gub"},
+                {value: "Faixa-preta", label: "faixa preta - 1° PON"},
             ]
         })
 
@@ -60,12 +68,12 @@ export async function criarCadastro(){
             message: "Digite o tipo de sangue:"
         })
 
-    if(isCancel(tiposengue)){ 
+    if(isCancel(tiposangue)){ 
         mainMenu() // chamando o menu principal
         return;
     }
 
-        obs = await text ({
+        obs = await select ({
             message: "Tem alguma observação clinica?:",
             options:[
                 {value: "nenhuma", label: "Nenhuma"},
@@ -111,15 +119,17 @@ export async function criarCadastro(){
 
         const aluno = { 
         username,
+        nomeCompleto,
         idade, 
         graduacao,
         tiposangue,
         cel,
         obs,
         endereco,
+        status: "Aluno ativo", // status padrão
         createdAt: new Date().toISOString() // Para receber a data atual e salvar a data em um obj json
     }
-    alunoManeger.create(aluno) // Para criar um novo user
+    alunosManeger.create(aluno) // Para criar um novo user
 
     log.success("Cadastro criado com sucesso!");
     

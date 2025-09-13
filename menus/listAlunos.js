@@ -1,14 +1,14 @@
 // Listar os usuários
 
-import {log, select, isCancel, password} from "@clack/prompts"
+import {log, select, isCancel} from "@clack/prompts"
 import chalk from "chalk"; // importando o chalk para poder formatar o texto
 
 
 // importanto de outro documento
 
-import { alunosManeger } from '../alunoControl/alunoss.js';
+import { alunosManeger } from '../alunosControl/alunos.js';
 import { mainMenu } from './menu.js';
-import { updateAlunosMenu } from "./updateAlunoss.js";
+import { updateAlunosMenu } from "./updateAlunos.js";
 
 //.
 

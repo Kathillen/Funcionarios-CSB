@@ -1,20 +1,12 @@
 import {isCancel, outro, log, select, text, intro, stream} from "@clack/prompts";
-import { alunoManeger } from "../alunosControl/alunos.js";
+import { alunosManeger } from "../alunosControl/alunos.js";
 import { criarCadastro} from "./criarCadastro.js";
 import { listAlunosMenu } from "./listAlunos.js";
 import { mainMenu } from "./menu.js";
 import chalk from "chalk"
-import { confirmAdm } from "./confirmAdm.js";
-
-
 
 export async function admMenu(){
     
-    const acesso = await confirmAdm();
-
-    if (!acesso) return;
-    
-    async function admOptions(){
     intro("  Você está no painel de controle! ");
 
     stream.warn((function *() { yield 'Lembre-se "Grandes poderes geram grandes responsabilidades."'; })());
@@ -26,7 +18,6 @@ export async function admMenu(){
         options: [
         {value: 'criarAluno', label: 'Criar novo cadastro'},
         {value: 'listarAlunos', label: 'Listar alunos'},
-        {value: 'admOptions', label: "Voltar ao menu adm"},
         {value: 'mainMenu', label: 'Voltar ao menu principal'},
         {value: 'exit', label: 'Sair'}
         ]
@@ -39,24 +30,18 @@ export async function admMenu(){
         }
         case "listarAlunos":{
             intro("Você escolheu ver a lista de alunos!");
-            listUsersMenu();
+            listAlunosMenu();
             return;
         }
-        case "admOptions":{
-                    console.log(chalk.bgBlue.rgb(29, 47, 151, 1).bold("🕷️  Você está voltando ao menu ADM!🕸️"));
-                    setTimeout( () => admMenu(), 1000); // chamando o menu principal
-                    return;
-                }
         case "mainMenu":{
-                    console.log(chalk.bgRed.rgb(0, 0, 0).bold("🕷️  Você está voltando ao menu principal!🕸️"));
+                    console.log(chalk.bgRed.rgb(0, 0, 0).bold("Você está voltando ao menu principal!"));
                     setTimeout( () => mainMenu(), 1000); // chamando o menu principal
                     return;
                 }
                 case "exit":{
-                    console.log(chalk.bgRed.rgb(0, 0, 0).bold("🕷️  Você está saindo do aranhaverso!🕸️"));
+                    console.log(chalk.bgRed.rgb(0, 0, 0).bold("🥋Você está saindo do sistema!👋🏽"));
                     process.exit(0); // encerra o programa
                 }
     }
 
-    } await admOptions();
-}
+} 

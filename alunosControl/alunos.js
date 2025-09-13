@@ -23,7 +23,7 @@ export const alunosManeger = {
     this.save();
     },
     toArray() {
-    return Array.from(this.users.values());
+    return Array.from(this.alunos.values());
     },
     colorStatus(status){ // definir uma cor dependendo do status da task
         switch(status){
