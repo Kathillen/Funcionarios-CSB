@@ -5,8 +5,13 @@ Sistema simples de controle de dados de alunos.
 
 # funcionalidade
 
-Este projeto tem a finalidade de facilitar o cadastro de novos alunos e ajuda a ter acesso aos dados todos eles de forma simplificada
+   Sistema para criação e controle de dados de alunos de uma academia de Taekwondo.
 
+----
+# Descrição
+  Esse projeto é uma reformulação/melhoria de um outro projeto meu, o aranhaverso, mas agora esse tem mais dados a serem coletados e manipulados. O sistema está melhorado, bugs que encontrei no aranhaverso não encontrei nesse.
+   Estou muito feliz com a minha evolução na programação. Há alguns meses, o tipico console.log("Hello World!") já era lago surpreendente pra mim. Cada dia mais suspresa de onde o conhecimento e o estudo podem me levar. 
+   O futuro está cada vez mais perto.
 ----
 
 ## Tecnologias usadas:
@@ -54,7 +59,7 @@ npm install "chalk"
 node index.js
 
 ---
-Em andamento.
+Finalizado.
 ---
 
 CONTATO:
